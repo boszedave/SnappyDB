@@ -9,4 +9,5 @@ LOCAL_C_INCLUDES := $(C_INCLUDES)
 LOCAL_CFLAGS := -DLEVELDB_PLATFORM_ANDROID -std=gnu++0x -g -w
 LOCAL_SRC_FILES := $(SOURCES) ./port/port_android.cc snappydb.cpp
 LOCAL_LDLIBS +=  -llog
+LOCAL_LDFLAGS += -Wl,-z,max-page-size=16384
 include $(BUILD_SHARED_LIBRARY)
